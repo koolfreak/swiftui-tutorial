@@ -24,6 +24,7 @@ struct TodoContentView: View {
     var pendingTask: [Binding<Task>] {
         $tasks.filter { !$0.isComplete.wrappedValue }
     }
+    
     var completedTask: [Binding<Task>] {
         $tasks.filter { $0.isComplete.wrappedValue }
     }

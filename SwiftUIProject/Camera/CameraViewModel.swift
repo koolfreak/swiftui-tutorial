@@ -14,8 +14,10 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     @Published var alert = false
     @Published var session = AVCaptureSession()
     @Published var output = AVCapturePhotoOutput()
+    //@Published var avCaptureDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back)!
     @Published var preview: AVCaptureVideoPreviewLayer!
     @Published var isSaved = false
+    @Published var isFlashOn = false
     @Published var picData = Data(count: 0)
     
     func check() {
@@ -41,9 +43,11 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     
     func setUp() {
         do {
+            
             self.session.beginConfiguration()
-            let device = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back)
-            let input = try AVCaptureDeviceInput(device: device!)
+            let avCaptureDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back)!
+            self.toggleFlash(isOn: false)
+            let input = try AVCaptureDeviceInput(device: avCaptureDevice)
             if self.session.canAddInput(input) {
                 self.session.addInput(input)
             }
@@ -58,8 +62,24 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
         }
     }
     
+    func toggleFlash(isOn: Bool) {
+
+        /*DispatchQueue.main.async {
+            do {
+                try self.avCaptureDevice.lockForConfiguration()
+                if self.avCaptureDevice.hasTorch {
+                    self.avCaptureDevice.torchMode = isOn ? .on : .off
+                }
+                self.avCaptureDevice.unlockForConfiguration()
+            }catch {
+                
+            }
+        }*/
+    }
+    
     func takePicture() {
         DispatchQueue.global(qos: .background).async {
+            
             self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
             self.session.stopRunning()
             

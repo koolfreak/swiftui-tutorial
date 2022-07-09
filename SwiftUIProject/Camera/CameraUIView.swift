@@ -16,6 +16,8 @@ struct CameraUIView: View {
 struct CameraView: View {
     
     @StateObject var cameraViewModel = CameraViewModel()
+    @State private var isFlashOn = false
+    @State private var moveUpDown = 0
     
     var body: some View {
         
@@ -25,24 +27,22 @@ struct CameraView: View {
                 .ignoresSafeArea(.all, edges: .all)
             
             VStack {
-                
+                // TODO Progress indicator here animated
                 if cameraViewModel.isTaken {
-                    HStack {
+                    
+                    ZStack(alignment: .center) {
+                        RoundedRectangle(cornerRadius: 5)
+                                .frame(width: .infinity, height: 5)
+                            .foregroundColor(Color.red)
+                            .shadow(radius: 5)
+                            .offset(y: CGFloat(moveUpDown))
+                            .animation(Animation.easeOut(duration: 0.75).repeatCount(100, autoreverses: true))
+                            .task {
+                                moveUpDown = -25
+                            }
                         
-                        Spacer()
-                        
-                        Button(action: {
-                            cameraViewModel.retakePicture()
-                        }, label: {
-                           Image(systemName: "arrow.triangle.2.circlepath.camera")
-                                .foregroundColor(.black)
-                                .padding()
-                                .background(Color.white)
-                                .clipShape(Circle())
-                        }).padding(.trailing, 10)
-                    }
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                
                 
                 Spacer()
                 HStack {
@@ -59,9 +59,19 @@ struct CameraView: View {
                                 .clipShape(Capsule())
                         }).padding(.leading)
                         Spacer()
+                        Button(action: {
+                            cameraViewModel.retakePicture()
+                        }, label: {
+                           Image(systemName: "arrow.triangle.2.circlepath.camera")
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(Color.white)
+                                .clipShape(Circle())
+                        }).padding(.trailing, 10)
                     }else{
                         Button(action: {
                             cameraViewModel.takePicture()
+                            moveUpDown = 600
                         }, label: {
                             ZStack {
                                 Circle().fill(Color.white).frame(width: 65, height: 65)
@@ -79,6 +89,21 @@ struct CameraView: View {
         .onAppear(perform: {
             cameraViewModel.check()
         })
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    isFlashOn = !isFlashOn
+                    cameraViewModel.toggleFlash(isOn: isFlashOn)
+                }, label: {
+                    Image(systemName: isFlashOn ? "bolt.fill" : "bolt.slash.fill")
+                         .foregroundColor(.black)
+                         .padding(.vertical, 5)
+                         .padding(.horizontal, 10)
+                         .background(Color.white)
+                         .clipShape(Capsule())
+                })
+            }
+        }
         
     }
     
