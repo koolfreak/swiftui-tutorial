@@ -32,7 +32,7 @@ struct CameraView: View {
                     
                     ZStack(alignment: .center) {
                         RoundedRectangle(cornerRadius: 5)
-                                .frame(width: .infinity, height: 5)
+                                .frame(maxWidth: .infinity, minHeight: 5)
                             .foregroundColor(Color.red)
                             .shadow(radius: 5)
                             .offset(y: CGFloat(moveUpDown))

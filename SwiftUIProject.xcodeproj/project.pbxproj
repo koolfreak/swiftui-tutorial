@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0326891128940F0500816DB4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326891028940F0500816DB4 /* NetworkManager.swift */; };
+		03268913289415F500816DB4 /* NetworkStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03268912289415F500816DB4 /* NetworkStatusView.swift */; };
 		03A08985273040F000A8AF08 /* SwiftUIProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A08984273040F000A8AF08 /* SwiftUIProjectApp.swift */; };
 		03A08987273040F000A8AF08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A08986273040F000A8AF08 /* ContentView.swift */; };
 		03A08989273040F100A8AF08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A08988273040F100A8AF08 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0326891028940F0500816DB4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		03268912289415F500816DB4 /* NetworkStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusView.swift; sourceTree = "<group>"; };
 		03A08981273040F000A8AF08 /* SwiftUIProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A08984273040F000A8AF08 /* SwiftUIProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIProjectApp.swift; sourceTree = "<group>"; };
 		03A08986273040F000A8AF08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			children = (
 				03FE47CD28787CAA00901223 /* CameraUIView.swift */,
 				03FE47CF28787EA700901223 /* CameraViewModel.swift */,
+				0326891028940F0500816DB4 /* NetworkManager.swift */,
+				03268912289415F500816DB4 /* NetworkStatusView.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -176,10 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03268913289415F500816DB4 /* NetworkStatusView.swift in Sources */,
 				03A08987273040F000A8AF08 /* ContentView.swift in Sources */,
 				03C14FF3285E23AD009E9FAD /* DocumentDetailsView.swift in Sources */,
 				03B7ADC0285E10B60046A66A /* TodoContentView.swift in Sources */,
 				03FE47CE28787CAA00901223 /* CameraUIView.swift in Sources */,
+				0326891128940F0500816DB4 /* NetworkManager.swift in Sources */,
 				03FE47D028787EA700901223 /* CameraViewModel.swift in Sources */,
 				03B7ADC2285E1A7F0046A66A /* NavigationFlowView.swift in Sources */,
 				03A08985273040F000A8AF08 /* SwiftUIProjectApp.swift in Sources */,
