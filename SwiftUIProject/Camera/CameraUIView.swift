@@ -30,8 +30,8 @@ struct CameraView: View {
                 // TODO Progress indicator here animated
                 if cameraViewModel.isTaken {
                     
-                    ZStack(alignment: .center) {
-                        RoundedRectangle(cornerRadius: 5)
+                    //ZStack(alignment: .center) {
+                        /*RoundedRectangle(cornerRadius: 5)
                                 .frame(maxWidth: .infinity, minHeight: 5)
                             .foregroundColor(Color.red)
                             .shadow(radius: 5)
@@ -39,9 +39,11 @@ struct CameraView: View {
                             .animation(Animation.easeOut(duration: 0.75).repeatCount(100, autoreverses: true))
                             .task {
                                 moveUpDown = -25
-                            }
+                            }*/
+                        LottieView(animationRes: "receipt-scanning").frame(maxWidth: .infinity, maxHeight: .infinity)
                         
-                    }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                        
+                    //}.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 
                 Spacer()

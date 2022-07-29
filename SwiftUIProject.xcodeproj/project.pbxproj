@@ -16,6 +16,10 @@
 		03B7ADC0285E10B60046A66A /* TodoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7ADBF285E10B60046A66A /* TodoContentView.swift */; };
 		03B7ADC2285E1A7F0046A66A /* NavigationFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7ADC1285E1A7F0046A66A /* NavigationFlowView.swift */; };
 		03C14FF3285E23AD009E9FAD /* DocumentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C14FF2285E23AD009E9FAD /* DocumentDetailsView.swift */; };
+		03EA2C91289450160007B72C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 03EA2C90289450160007B72C /* Lottie */; };
+		03EA2C93289450D90007B72C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA2C92289450D90007B72C /* LottieView.swift */; };
+		03EA2C95289453CE0007B72C /* camera-scanning.json in Resources */ = {isa = PBXBuildFile; fileRef = 03EA2C94289453CE0007B72C /* camera-scanning.json */; };
+		03EA2C97289458A50007B72C /* receipt-scanning.json in Resources */ = {isa = PBXBuildFile; fileRef = 03EA2C96289458A40007B72C /* receipt-scanning.json */; };
 		03FE47CE28787CAA00901223 /* CameraUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE47CD28787CAA00901223 /* CameraUIView.swift */; };
 		03FE47D028787EA700901223 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE47CF28787EA700901223 /* CameraViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +35,9 @@
 		03B7ADBF285E10B60046A66A /* TodoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoContentView.swift; sourceTree = "<group>"; };
 		03B7ADC1285E1A7F0046A66A /* NavigationFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowView.swift; sourceTree = "<group>"; };
 		03C14FF2285E23AD009E9FAD /* DocumentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailsView.swift; sourceTree = "<group>"; };
+		03EA2C92289450D90007B72C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		03EA2C94289453CE0007B72C /* camera-scanning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "camera-scanning.json"; sourceTree = "<group>"; };
+		03EA2C96289458A40007B72C /* receipt-scanning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "receipt-scanning.json"; sourceTree = "<group>"; };
 		03FE47CD28787CAA00901223 /* CameraUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUIView.swift; sourceTree = "<group>"; };
 		03FE47CF28787EA700901223 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03EA2C91289450160007B72C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +112,13 @@
 		03FE47CC28787C5700901223 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				03EA2C96289458A40007B72C /* receipt-scanning.json */,
+				03EA2C94289453CE0007B72C /* camera-scanning.json */,
 				03FE47CD28787CAA00901223 /* CameraUIView.swift */,
 				03FE47CF28787EA700901223 /* CameraViewModel.swift */,
 				0326891028940F0500816DB4 /* NetworkManager.swift */,
 				03268912289415F500816DB4 /* NetworkStatusView.swift */,
+				03EA2C92289450D90007B72C /* LottieView.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -128,6 +139,9 @@
 			dependencies = (
 			);
 			name = SwiftUIProject;
+			packageProductDependencies = (
+				03EA2C90289450160007B72C /* Lottie */,
+			);
 			productName = SwiftUIProject;
 			productReference = 03A08981273040F000A8AF08 /* SwiftUIProject.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 03A08978273040F000A8AF08;
+			packageReferences = (
+				03EA2C8F289450160007B72C /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 03A08982273040F000A8AF08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,8 +187,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03EA2C95289453CE0007B72C /* camera-scanning.json in Resources */,
 				03A0898C273040F100A8AF08 /* Preview Assets.xcassets in Resources */,
 				03A08989273040F100A8AF08 /* Assets.xcassets in Resources */,
+				03EA2C97289458A50007B72C /* receipt-scanning.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +208,7 @@
 				03FE47CE28787CAA00901223 /* CameraUIView.swift in Sources */,
 				0326891128940F0500816DB4 /* NetworkManager.swift in Sources */,
 				03FE47D028787EA700901223 /* CameraViewModel.swift in Sources */,
+				03EA2C93289450D90007B72C /* LottieView.swift in Sources */,
 				03B7ADC2285E1A7F0046A66A /* NavigationFlowView.swift in Sources */,
 				03A08985273040F000A8AF08 /* SwiftUIProjectApp.swift in Sources */,
 			);
@@ -320,11 +340,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIProject/Preview Content\"";
 				DEVELOPMENT_TEAM = 3DU6TRJ876;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow Camera";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -351,11 +372,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIProject/Preview Content\"";
 				DEVELOPMENT_TEAM = 3DU6TRJ876;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow Camera";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -397,6 +419,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03EA2C8F289450160007B72C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03EA2C90289450160007B72C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03EA2C8F289450160007B72C /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 03A08979273040F000A8AF08 /* Project object */;
 }
